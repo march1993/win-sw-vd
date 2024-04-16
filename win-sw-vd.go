@@ -20,11 +20,6 @@ const (
 	Ks2R = win.VK_RIGHT<<8 | MOD_CONTROL | MOD_WIN
 )
 
-const (
-	Id2L = 0x00000024
-	Id2R = 0x00000025
-)
-
 func main() {
 	action := "demo"
 
@@ -82,13 +77,13 @@ func main() {
 // to left
 func switchLeft(hwnds []HWND) {
 	for _, hwnd := range hwnds {
-		win.SendMessage(hwnd, win.WM_HOTKEY, Id2L, Ks2L)
+		win.SendMessage(hwnd, win.WM_HOTKEY, Ids.Id2L, Ks2L)
 	}
 }
 
 // to right
 func switchRight(hwnds []HWND) {
 	for _, hwnd := range hwnds {
-		win.SendMessage(hwnd, win.WM_HOTKEY, Id2R, Ks2R)
+		win.SendMessage(hwnd, win.WM_HOTKEY, Ids.Id2R, Ks2R)
 	}
 }
